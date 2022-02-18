@@ -47,6 +47,7 @@ terraform apply main.tfplan
 
 ### Sensitive variables
 https://learn.hashicorp.com/tutorials/terraform/sensitive-variables
+
 Store your sensitive variables in secrets.tfvars file, and ensure that it is ignored by git.
 
 ``` powershell
