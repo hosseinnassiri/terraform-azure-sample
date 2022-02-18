@@ -43,6 +43,9 @@ terraform init
 terraform plan -out main.tfplan
 
 terraform apply main.tfplan
+
+# passing variables at runtime
+terraform apply -var="resource_group_name_prefix=rg" -var="resource_group_location=canadacentral"
 ```
 
 ### Sensitive variables
@@ -51,13 +54,10 @@ https://learn.hashicorp.com/tutorials/terraform/sensitive-variables
 Store your sensitive variables in secrets.tfvars file, and ensure that it is ignored by git.
 
 ``` powershell
-# pass variables at runtime
-terraform apply -var="system=terraformdemo" -var="location=eastus"
 # pass secret variables at planning
 terraform plan -out main.tfplan -var-file="secrets.tfvars"
 # pass secret variables at applying
 terraform apply -var-file="secrets.tfvars"
-
 ```
 
 ### Destroy the resources
