@@ -10,6 +10,14 @@ variable "resource_group_location" {
   description = "Location of the resource group."
 }
 
+variable "storage_account_prefix" {
+  default = "hn"
+}
+
+variable "storage_account_container" {
+  default = "mycontainer"
+}
+
 variable "azure_subscription_id" {
   type      = string
   sensitive = true

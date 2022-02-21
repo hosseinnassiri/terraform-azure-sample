@@ -48,6 +48,13 @@ terraform apply main.tfplan
 terraform apply -var="resource_group_name_prefix=rg" -var="resource_group_location=canadacentral"
 ```
 
+### Inspect the state
+``` powershell
+terraform show
+
+terraform state list
+```
+
 ### Sensitive variables
 https://learn.hashicorp.com/tutorials/terraform/sensitive-variables
 
@@ -63,8 +70,10 @@ terraform apply -var-file="secrets.tfvars"
 ### Destroy the resources
 ``` powershell
 terraform plan -destroy -out main.destroy.tfplan
-
 terraform apply main.destroy.tfplan
+
+# or
+terraform destroy
 ```
 
 ### Validate terraform template
